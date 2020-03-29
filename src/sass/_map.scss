@@ -1,0 +1,180 @@
+#map_container {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    .leaflet-popup {
+        left: -88px !important;
+        bottom: 21px !important;
+        width: 200px;
+        .leaflet-popup-content-wrapper {
+            border-radius: 5px;
+            background: #ffffff;
+            color: black;
+            font-weight: 600;
+        }
+    }
+}
+
+#topbar {
+    position: absolute;
+    top: -100%;
+    background: #2461a9;
+    z-index: 9;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include _respond_to(custom, 0, 992px) {
+        top: 0;
+    }
+    .title {
+        padding: 10px 5px 10px 30px;
+        font-size: 25px;
+        color: white;
+    }
+    .menu-opener {
+        cursor: pointer;
+        font-size: 16px;
+        color: white;
+        margin-right: 30px;
+        position: relative;
+        .lnr-menu {
+            padding-top: 4px;
+            position: absolute;
+            left: -20px;
+        }
+    }
+}
+
+#sidebar {
+    position: absolute;
+    z-index: 10;
+    width: 500px;
+    display: flex;
+    height: 100%;
+    background-color: #111;
+    left: 0;
+    top: 0;
+    box-shadow: 0 0 12px 2px #000;
+    flex-flow: column;
+    transition: left .3s;
+    @include _respond_to(custom, 0, 992px) {
+        left: -100vw;
+        width: 100vw;
+    }
+    &.open {
+        left: 0 !important;
+    }
+    header {
+        background: #2461a9;
+        padding: 15px 30px;
+        position: relative;
+        &.open {
+            .extra-information {
+                display: block;
+                overflow: inherit;
+            }
+        }
+        .extra-information {
+            display: none;
+            overflow: hidden;
+            margin-top: 15px;
+            transition: 0.4s;
+        }
+        .title {
+            font-size: 30px;
+            color: white;
+            border-bottom: 1px solid #1e59a0;
+            margin-bottom: 6px;
+            padding-bottom: 6px;
+            @include _respond_to(custom, 0, 992px) {
+                font-size: 25px;
+            }
+            span.menu-closer {
+                display: block;
+                float: right;
+                font-size: 12px;
+                cursor: pointer;
+                @include _respond_to(custom, 993px, 5000px) {
+                    display: none;
+                }
+            }
+        }
+        .sub-header {
+            font-weight: 600;
+            color: #ff5e5e;
+            /* font-style: italic; */
+            text-transform: uppercase;
+            font-size: 22px;
+        }
+        .extra-data {
+            @include _respond_to(custom, 0, 992px) {
+                font-size: 14px;
+            }
+            a {
+                font-style: italic;
+                color: white;
+            }
+            .quedate-en-casa {
+                font-weight: 600;
+                color: #ff5e5e;
+            }
+        }
+        .lnr-chevron-down-circle {
+            color: #11151d;
+            font-size: 20px;
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+            transition: all .3s;
+            &.open {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    footer {
+        background: #2561a9;
+        padding: 10px 15px;
+        border-top: 3px solid #888;
+        display: flex;
+        justify-content: space-evenly;
+        .col {
+            display: flex;
+            font-size: 14px;
+            justify-content: center;
+            @include _respond_to(custom, 0, 992px) {
+                font-size: 12px;
+            }
+            img {
+                padding-right: 5px;
+                width: 15px;
+            }
+        }
+    }
+    ul#provinces {
+        flex: 1;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+        li {
+            font-size: 17px;
+            border-bottom: 1px solid #1d1d1d;
+            color: white;
+            padding: 5px 15px;
+            @include _respond_to(custom, 0, 992px) {
+                font-size: 14px;
+            }
+            a {
+                color: white;
+                text-decoration: none;
+            }
+            &:hover {
+                background: #2e2e2e;
+            }
+            span {
+                font-size: 13px;
+            }
+        }
+    }
+}

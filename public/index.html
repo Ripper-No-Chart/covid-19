@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="title" content="Covid19Argentina" />
+    <meta
+      name="description"
+      content="Sitio no oficial para trackear casos de coronavirus - covid19 en la Republica Argentina. Datos obtenidos desde el Ministerio de Salud."
+    />
+    <meta name="keywords" content="covid19, Coronavirus, Argentina" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Spanish" />
+    <meta property="og:title" content="Covid19 Argentina" />
+    <meta
+      property="og:description"
+      content="Sitio no oficial para trackear casos de coronavirus - covid19 en la Republica Argentina. Datos obtenidos desde el Ministerio de Salud."
+    />
+    <meta
+      property="og:image"
+      content="https://covid19argentina.com/images/covid19-argentina-map.png"
+    />
+
+    <title>Covid19 - Argentina</title>
+    <link rel="stylesheet" href="./dist/app.css" />
+    <!-- Font Awsome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+    />
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Poppins:400,600,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="topbar">
+      <div class="title">
+        COVID19 - AR
+      </div>
+      <div class="menu-opener">
+        <svg class="lnr lnr-menu"><use xlink:href="#lnr-menu"></use></svg> Menu
+      </div>
+    </div>
+
+    <div id="sidebar" class="shadow">
+      <header>
+        <div class="title text-center">
+          COVID19 - AR
+          <span class="menu-closer">
+            Cerrar
+          </span>
+        </div>
+        <div class="sub-header text-center">
+          Total de casos <span id="total-cases">0</span>
+        </div>
+        <div class="extra-data">
+          <div class="row">
+            <div class="col-12 text-center">
+              <strong>Ultima actualizacion</strong>
+            </div>
+            <div class="col-12 text-center">
+              <span id="updated-at"></span>
+            </div>
+            <div class="col-12 text-center mt-2">
+              Fuente
+            </div>
+            <div class="col-12 text-center">
+              <a href="https://www.argentina.gob.ar/salud/coronavirus-COVID-19">
+                Ministerio de Salud de la Republica Argentina
+              </a>
+            </div>
+            <div class="col-6 text-center mt-2">
+              <cite> Este sitio <strong>no</strong> es oficial </cite>
+            </div>
+            <div class="quedate-en-casa col-6 mt-2">#QUEDATEENCASA</div>
+          </div>
+          <aside class="social mt-2">
+            <div class="row text-center">
+              <div class="col-12">
+                <h5>Comparti esta pagina</h5>
+              </div>
+              <div class="col-3">
+                <h4>
+                  <a
+                    href="https://www.facebook.com/negrele"
+                    title="Seguinos en Facebook"
+                    ><i class="fab fa-facebook"></i
+                  ></a>
+                </h4>
+              </div>
+              <div class="col-3">
+                <h4>
+                  <a href="#" title="Seguinos en Instagram"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </h4>
+              </div>
+              <div class="col-3">
+                <h4>
+                  <a
+                    href="whatsapp://send?text=https://covid19argentina.com/"
+                    data-action="share/whatsapp/share"
+                    title="Compartir por WhatsApp"
+                    ><i class="fab fa-whatsapp"></i
+                  ></a>
+                </h4>
+              </div>
+              <div class="col-3">
+                <h4>
+                  <a href="mailto:ezequielf057@gmail.com"
+                    ><i
+                      class="fas fa-envelope"
+                      title="Contactanos por Email"
+                    ></i
+                  ></a>
+                </h4>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="extra-information text-center text-white">
+          ¿Queres colaborar con nosotros? ¡Contactanos! <br />
+        </div>
+
+        <svg class="lnr lnr-chevron-down-circle more-info">
+          <use xlink:href="#lnr-chevron-down-circle"></use>
+        </svg>
+      </header>
+
+      <ul id="provinces"></ul>
+
+      <footer>
+        <div class="col">
+          <img src="images/website.svg" alt="" />
+          <a href="http://ezequielfernandez.com">ezequielfernandez.com</a>
+        </div>
+        <div class="col">
+          <img src="images/mail.svg" alt="" />
+          <a href="mailto:ezequielf057@gmail.com">Enviame un mensaje</a>
+        </div>
+      </footer>
+    </div>
+
+    <div id="map_container"></div>
+    <script src="./dist/app.js"></script>
+    <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
+    <script
+      data-ad-client="ca-pub-8142007826673500"
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    ></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-162040555-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-162040555-1");
+    </script>
+  </body>
+</html>
